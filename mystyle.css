@@ -493,6 +493,21 @@ input[type=submit]:hover {
   margin-bottom: 20px;
 }
 
+.contact-form label {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #15908c;
+  vertical-align: middle;
+}
+
+.contact-form label + span {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ca4444;
+  vertical-align: middle;
+}
+
 .contact-form {
   padding: 20px;
 }

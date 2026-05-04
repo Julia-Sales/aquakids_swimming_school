@@ -76,14 +76,14 @@
   <input type="hidden" name="access_key" value="9db00cba-b08c-40af-b33d-44edcde6901c">
 
   <!-- Parent Name -->
-  <label for="parent-name">Parent / Guardian Full Name</label> <text>(Required)</text>
+  <label for="parent-name">Parent / Guardian Full Name</label> <span class="required">(Required)</span>
   <input type="text" id="parent-name" name="parent_name" class="form-control" placeholder="Your full name.." required>
   <div class="invalid-feedback">
     Please enter your full name.
   </div>
 
   <!-- Email -->
-  <label for="email">Parent / Guardian e-mail address</label> <text>(Required)</text>
+  <label for="email">Parent / Guardian e-mail address</label> <span class="required">(Required)</span>
   <input type="email" id="email" name="email" class="form-control" placeholder="Your e-mail address.." required>
   <div class="invalid-feedback">
     Please enter a valid email address.
@@ -99,14 +99,14 @@
   <input type="text" id="child-name" name="child_name" class="form-control" placeholder="Child's name..">
 
   <!-- Age -->
-  <label for="child-age">Child’s Age / Date of Birth</label> <text>(Required)</text>
+  <label for="child-age">Child’s Age / Date of Birth</label> <span class="required">(Required)</span>
   <input type="text" id="child-age" name="child_age" class="form-control" placeholder="Age or date of birth.." required>
   <div class="invalid-feedback">
     Please enter your child’s age or date of birth.
   </div>
 
   <!-- Level -->
-  <label for="level">Child’s Swimming Experience Level</label> <text>(Required)</text>
+  <label for="level">Child’s Swimming Experience Level</label> <span class="required">(Required)</span>
   <select id="level" name="level" class="form-select" required>
     <option value="" disabled selected>Select level</option>
     <option value="beginner">Beginner</option>
@@ -118,7 +118,7 @@
   </div>
 
   <!-- Message -->
-  <label for="subject">Message</label> <text>(Required)</text>
+  <label for="subject">Message</label> <span class="required">(Required)</span>
   <textarea id="subject" name="message" class="form-control" placeholder="Write something.." style="height:200px" required></textarea>
   <div class="invalid-feedback">
     Please enter a message.
