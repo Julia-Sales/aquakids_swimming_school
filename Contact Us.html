@@ -50,7 +50,7 @@
 <main class="container">
   <div class="starter-template text-center">
     <h1>Contact Us</h1>
-    <p>
+    <p class="lead">
   We'd love to hear from you.<br>
   Get in touch for questions, bookings, or more information.
 </p>
@@ -71,31 +71,77 @@
   <!-- Contact Form start-->
   <!-- Scoped contact form container so global .container styles aren't affected -->
   <div class="container contact-form">
-  <form action="https://api.web3forms.com/submit" method="POST">
+<form action="https://api.web3forms.com/submit" method="POST" class="needs-validation" novalidate>
+
   <input type="hidden" name="access_key" value="9db00cba-b08c-40af-b33d-44edcde6901c">
 
-    <label for="fname">Parent / Guardian Full Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  <!-- Parent Name -->
+  <label for="parent-name">Parent / Guardian Full Name</label>
+  <input type="text" id="parent-name" name="parent_name" class="form-control" placeholder="Your full name.." required>
+  <div class="invalid-feedback">
+    Please enter your full name.
+  </div>
 
-    <label for="lname">Child’s Full Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  <!-- Email -->
+  <label for="email">Parent / Guardian e-mail address</label>
+  <input type="email" id="email" name="email" class="form-control" placeholder="Your e-mail address.." required>
+  <div class="invalid-feedback">
+    Please enter a valid email address.
+  </div>
 
-    <label for="cname">Child’s Age / Date of Birth</label>
-    <input type="text" id="cname" name="cname" placeholder="Your child's age or date of birth..">
+  <!-- Phone -->
+  <label for="phone">Parent / Guardian phone number</label>
+  <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your phone number.." required>
+  <div class="invalid-feedback">
+    Please enter your phone number.
+  </div>
 
-    <label for="country">Child’s Swimming Experience Level</label>
-    <select id="country" name="country">
-      <option value="beginner">Beginner</option>
-      <option value="intermediate">Intermediate</option>
-      <option value="advanced">Advanced</option>
-    </select>
+  <!-- Child Name -->
+  <label for="child-name">Child’s Full Name</label>
+  <input type="text" id="child-name" name="child_name" class="form-control" placeholder="Child's name.." required>
+  <div class="invalid-feedback">
+    Please enter your child’s name.
+  </div>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  <!-- Age -->
+  <label for="child-age">Child’s Age / Date of Birth</label>
+  <input type="text" id="child-age" name="child_age" class="form-control" placeholder="Age or date of birth.." required>
+  <div class="invalid-feedback">
+    Please enter your child’s age or date of birth.
+  </div>
 
-    <input type="submit" value="Submit">
+  <!-- Level -->
+  <label for="level">Child’s Swimming Experience Level</label>
+  <select id="level" name="level" class="form-select" required>
+    <option value="" disabled selected>Select level</option>
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="advanced">Advanced</option>
+  </select>
+  <div class="invalid-feedback">
+    Please select a level.
+  </div>
 
-  </form>
+  <!-- Message -->
+  <label for="subject">Message</label>
+  <textarea id="subject" name="message" class="form-control" placeholder="Write something.." style="height:200px" required></textarea>
+  <div class="invalid-feedback">
+    Please enter a message.
+  </div>
+
+  <!-- Consent -->
+  <div class="form-check mt-3">
+    <input type="checkbox" id="consent" class="form-check-input" required>
+    <label for="consent" class="form-check-label">I agree to be contacted</label>
+    <div class="invalid-feedback">
+      You must agree before submitting.
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <input type="submit" value="Submit" class="btn mt-3">
+
+</form>
 </div>
 
 <!-- Contact Form end-->
@@ -120,7 +166,8 @@
 
 </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/gallery.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/myjavascript.js"></script> 
   </body>
 </html>

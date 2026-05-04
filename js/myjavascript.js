@@ -140,3 +140,32 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Lesson modal init error:', err);
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     SAFE SLIDESHOW (ONLY IF EXISTS)
+  ========================= */
+  if (typeof showSlides === "function" && typeof slideIndex !== "undefined") {
+    showSlides(slideIndex);
+  }
+
+  /* =========================
+     FORM VALIDATION
+  ========================= */
+  const forms = document.querySelectorAll(".needs-validation");
+
+  forms.forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add("was-validated");
+    });
+  });
+
+});

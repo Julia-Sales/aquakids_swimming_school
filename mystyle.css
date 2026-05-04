@@ -91,14 +91,54 @@ input[type=submit]:hover {
    HERO (FULL SCREEN)
 ========================= */
 .hero {
-  width: 100%;
-  height: 100vh;
-  background-image: url("Images/hero banner.png");
+  width: 100%;                 /* was 80% — caused overflow under navbar */
+  min-height: 100vh;
+  background-image: url("Images/hero banner.png"); /* horizontal version (desktop) */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;            /* stop hero image bleeding into About */
+  z-index: 1;                  /* keep navbar above hero */
 }
+
+/* Navbar must always sit above the hero */
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero image cannot exceed the hero box */
+.content-overlay .hero-person {
+  max-height: 70vh;            
+}
+
+/* =========================
+   HERO — VERTICAL BACKGROUND
+   for XS, SM and MD breakpoints (≤ 991.98px, Bootstrap's lg breakpoint)
+========================= */
+@media (max-width: 991.98px) {
+  .hero {
+    /* swap to a portrait/vertical version of the banner */
+    background-image: url("Images/hero banner vertical.png");
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh;
+  }
+
+  .content-overlay {
+    /* anchor content from the top so it can't push into About */
+    top: auto;
+    bottom: 5%;
+    transform: translateX(-50%);
+    width: 92%;
+  }
+
+  .content-overlay .hero-person {
+    max-height: 45vh;          /* keep the swimmer inside the hero on tall/narrow screens */
+  }
+}
+
 
 
 /* =========================
@@ -127,7 +167,7 @@ input[type=submit]:hover {
   width: auto;
   max-width: 100%;
   /* keep current visual size as maximum */
-  max-height: 600px;
+  max-height: 530px;
   height: auto;
 }
 
@@ -147,7 +187,7 @@ input[type=submit]:hover {
     padding: 0 1rem;
   }
   .content-overlay .hero-person {
-    max-height: 360px; /* smaller screens use a lower max height */
+    max-height: 350px; /* smaller screens use a lower max height */
   }
 }
 
@@ -214,7 +254,7 @@ input[type=submit]:hover {
 .bg-contact main,
 .bg-contact .starter-template {
   position: relative;
-  z-index: 1;
+ 
 }
 
 /* About section background (watercolor) */
@@ -235,10 +275,14 @@ input[type=submit]:hover {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  padding: 30px clamp(40px, 6vw, 80px);
   z-index: 1;
   color: #fff;
 }
-
+.testimonial-box .carousel-inner {
+  padding-left: 70px;
+  padding-right: 70px;
+}
 /* shared overlay for readability */
 .bg-about::before,
 .testimonials-section::before {
@@ -453,6 +497,11 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 10px;
+}
 
 /* =========================
    ACCORDION
